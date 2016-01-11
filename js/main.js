@@ -67,11 +67,10 @@ var Namespaces = React.createClass({
             </li>
         );
     },
-    renderFolders: function (data) {
-        var folders = data.map(this.renderFolder);
+    renderFolders: function (folders) {
         return (
             <ul className="tree">
-                {folders}
+                {folders.map(this.renderFolder)}
             </ul>
         );
     },
