@@ -42,7 +42,7 @@ var Namespaces = React.createClass({
         e.preventDefault();
         console.log(e);
     },
-    renderFolders: function (folder) {
+    renderFolder: function (folder) {
         var icon, list = null;
         if (folder.type=="folder")
         {
@@ -53,7 +53,7 @@ var Namespaces = React.createClass({
                 icon = <i className="glyphicon glyphicon-folder-open"></i>
 
                 if (folder.files!=undefined&&folder.files.length>0)
-                    list = <ul className="tree">{folder.files.map(this.renderFolders)}</ul>;
+                    list = this.renderFolders(folder.files);
             }
         }
         else
@@ -67,13 +67,16 @@ var Namespaces = React.createClass({
             </li>
         );
     },
-    render: function () {
-        var folders = this.state.folders.map(this.renderFolders);
+    renderFolders: function (data) {
+        var folders = data.map(this.renderFolder);
         return (
             <ul className="tree">
                 {folders}
             </ul>
         );
+    },
+    render: function () {
+        return this.renderFolders(this.state.folders)
     }
 });
 
