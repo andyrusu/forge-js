@@ -30,7 +30,7 @@ var Namespaces = React.createClass({
         e.preventDefault();
         var id = e.currentTarget.getAttribute('id');
         this.setState({folders: this.state.folders.map(function (folder) {
-            if (folder.type=="folder")
+            if (folder.type=="folder") 
             {
                 if (folder.id==id)
                     folder.state = (folder.state==0) ? 1 : 0;
@@ -106,6 +106,26 @@ var MainHeader = React.createClass({
     }
 });
 
+var StatusFooter = React.createClass({
+    getInitialState: function () {
+        return {statuses: [{label: "Components", value: 10},
+                           {label: "Connections", value: 10}]};
+    },
+    render: function () {
+        var statuses = this.state.statuses.map(function (status) {
+            return <div><span className="label">{status.label}:</span> {status.value} |</div>
+        });
+        
+        return (
+            <footer className="footer">
+                <div className="container">
+                    {statuses}
+                </div>
+            </footer>
+        );
+    }
+});
+
 var Sidebar = React.createClass({
     render: function () {
         return (
@@ -142,6 +162,7 @@ var GUI = React.createClass({
                         <MainPanel />
                     </div>
                 </div>
+                <StatusFooter />
             </div>
         );
     }
