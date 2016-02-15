@@ -1,7 +1,7 @@
 var React = require('react');
-var MainHeader = require('../../js/ui/MainHeader.js');
-var Sidebar = require('../../js/ui/Sidebar.js');
-var MainPanel = require('../../js/ui/MainPanel.js');
+var MainHeader = require('../../app/ui/MainHeader.js');
+var Sidebar = require('../../app/ui/Sidebar.js');
+var MainPanel = require('../../app/ui/MainPanel.js');
 
 var Gui = React.createClass({
     render: function () {
