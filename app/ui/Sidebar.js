@@ -1,7 +1,7 @@
 var React      = require('react');
 var Tabs       = require('react-bootstrap').Tabs;
 var Tab        = require('react-bootstrap').Tab;
-var Namespaces = require('../../js/ui/Namespaces');
+var Namespaces = require('../../app/ui/Namespaces');
 
 var Sidebar = React.createClass({
     render: function () {

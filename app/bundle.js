@@ -94,7 +94,7 @@ process.umask = function() { return 0; };
 },{}],2:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Gui = require('../js/ui/Gui.js');
+var Gui = require('../app/ui/Gui.js');
 var data = {
     sidebar: {
         namespaces: [{ id: "f1", title: "Folder 1", type: "folder", state: 0, files: [{ id: "fi1", title: "File 1", type: "file" }] }, { id: "f2", title: "Folder 2", type: "folder", state: 0, files: [{ id: "fi2", title: "File 2", type: "file" }] }, { id: "fl3", title: "File 3", type: "file" }]
@@ -103,11 +103,11 @@ var data = {
 
 ReactDOM.render(React.createElement(Gui, { data: data }), document.getElementById('root'));
 
-},{"../js/ui/Gui.js":3,"react":404,"react-dom":251}],3:[function(require,module,exports){
+},{"../app/ui/Gui.js":3,"react":404,"react-dom":251}],3:[function(require,module,exports){
 var React = require('react');
-var MainHeader = require('../../js/ui/MainHeader.js');
-var Sidebar = require('../../js/ui/Sidebar.js');
-var MainPanel = require('../../js/ui/MainPanel.js');
+var MainHeader = require('../../app/ui/MainHeader.js');
+var Sidebar = require('../../app/ui/Sidebar.js');
+var MainPanel = require('../../app/ui/MainPanel.js');
 
 var Gui = React.createClass({
     displayName: 'Gui',
@@ -133,7 +133,7 @@ var Gui = React.createClass({
 
 module.exports = Gui;
 
-},{"../../js/ui/MainHeader.js":4,"../../js/ui/MainPanel.js":5,"../../js/ui/Sidebar.js":7,"react":404}],4:[function(require,module,exports){
+},{"../../app/ui/MainHeader.js":4,"../../app/ui/MainPanel.js":5,"../../app/ui/Sidebar.js":7,"react":404}],4:[function(require,module,exports){
 var React = require('react');
 var Navbar = require('react-bootstrap').Navbar;
 var Nav = require('react-bootstrap').Nav;
@@ -295,7 +295,7 @@ module.exports = Namespaces;
 var React = require('react');
 var Tabs = require('react-bootstrap').Tabs;
 var Tab = require('react-bootstrap').Tab;
-var Namespaces = require('../../js/ui/Namespaces');
+var Namespaces = require('../../app/ui/Namespaces');
 
 var Sidebar = React.createClass({
     displayName: 'Sidebar',
@@ -324,7 +324,7 @@ var Sidebar = React.createClass({
 
 module.exports = Sidebar;
 
-},{"../../js/ui/Namespaces":6,"react":404,"react-bootstrap":240}],8:[function(require,module,exports){
+},{"../../app/ui/Namespaces":6,"react":404,"react-bootstrap":240}],8:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/assign"), __esModule: true };
 },{"core-js/library/fn/object/assign":19}],9:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
@@ -16747,48 +16747,8 @@ function addFocusListener(handler) {
 
 module.exports = exports['default'];
 },{}],261:[function(require,module,exports){
-/**
- * Safe chained function
- *
- * Will only create a new function if needed,
- * otherwise will pass back existing functions or null.
- *
- * @param {function} functions to chain
- * @returns {function|null}
- */
-'use strict';
-
-exports.__esModule = true;
-function createChainedFunction() {
-  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
-    funcs[_key] = arguments[_key];
-  }
-
-  return funcs.filter(function (f) {
-    return f != null;
-  }).reduce(function (acc, f) {
-    if (typeof f !== 'function') {
-      throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
-    }
-
-    if (acc === null) {
-      return f;
-    }
-
-    return function chainedFunction() {
-      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
-      }
-
-      acc.apply(this, args);
-      f.apply(this, args);
-    };
-  }, null);
-}
-
-exports['default'] = createChainedFunction;
-module.exports = exports['default'];
-},{}],262:[function(require,module,exports){
+arguments[4][248][0].apply(exports,arguments)
+},{"dup":248}],262:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
