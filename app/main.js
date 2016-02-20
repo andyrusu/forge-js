@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Gui = require('../app/ui/Gui.js');
+
 var data = {
     sidebar: {
         namespaces: [
